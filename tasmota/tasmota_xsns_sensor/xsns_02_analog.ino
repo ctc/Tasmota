@@ -314,7 +314,7 @@ void AdcInit(void) {
 #if CONFIG_IDF_TARGET_ESP32
     analogSetWidth(ANALOG_RESOLUTION);  // Default 12 bits (0 - 4095)
 #endif  // CONFIG_IDF_TARGET_ESP32
-    analogSetAttenuation(ADC_11db);     // Default 11db
+    analogSetAttenuation(ADC_0db);     // Default 11db
 #endif
     for (uint32_t idx = 0; idx < Adcs.present; idx++) {
       AdcGetSettings(idx);
