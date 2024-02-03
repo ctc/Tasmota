@@ -335,11 +335,11 @@ uint16_t AdcRead(uint32_t pin, uint32_t factor) {
   uint32_t samples = 1 << factor;
   uint32_t analog = 0;
   for (uint32_t i = 0; i < samples; i++) {
-#ifdef ESP32 
-    analog += analogReadMilliVolts(pin);  // get the value corrected by calibrated values from the eFuses
-#else
+//#ifdef ESP32 
+//    analog += analogReadMilliVolts(pin);  // get the value corrected by calibrated values from the eFuses
+//#else
     analog += analogRead(pin);
-#endif
+//#endif
     delay(1);
   }
   analog >>= factor;
