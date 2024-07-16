@@ -9,7 +9,8 @@ extern const bclass be_class_Matter_Plugin_Bridge_Light3;
 /********************************************************************
 ** Solidified function: set_sat
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_set_sat,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_set_sat,   /* name */
   be_nested_proto(
     9,                          /* nstack */
     2,                          /* argc */
@@ -17,7 +18,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_set_sat,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 6]) {     /* constants */
     /* K0   */  be_nested_str_weak(tasmota),
@@ -59,7 +60,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_set_sat,   /* name */
 /********************************************************************
 ** Solidified function: parse_update
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_parse_update,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_parse_update,   /* name */
   be_nested_proto(
     15,                          /* nstack */
     3,                          /* argc */
@@ -67,7 +69,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_parse_update,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[13]) {     /* constants */
     /* K0   */  be_nested_str_weak(parse_update),
@@ -166,7 +168,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_parse_update,   /* name */
 /********************************************************************
 ** Solidified function: web_values
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_web_values,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_web_values,   /* name */
   be_nested_proto(
     10,                          /* nstack */
     1,                          /* argc */
@@ -174,7 +177,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_web_values,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 8]) {     /* constants */
     /* K0   */  be_nested_str_weak(webserver),
@@ -214,7 +217,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_web_values,   /* name */
 /********************************************************************
 ** Solidified function: web_value_RGB
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_web_value_RGB,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_web_value_RGB,   /* name */
   be_nested_proto(
     12,                          /* nstack */
     1,                          /* argc */
@@ -222,7 +226,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_web_value_RGB,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[15]) {     /* constants */
     /* K0   */  be_nested_str_weak(shadow_hue),
@@ -298,7 +302,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_web_value_RGB,   /* name */
 /********************************************************************
 ** Solidified function: read_attribute
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
   be_nested_proto(
     12,                          /* nstack */
     4,                          /* argc */
@@ -306,7 +311,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[14]) {     /* constants */
     /* K0   */  be_nested_str_weak(matter),
@@ -326,14 +331,14 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
     }),
     be_str_weak(read_attribute),
     &be_const_str_solidified,
-    ( &(const binstruction[127]) {  /* code */
+    ( &(const binstruction[107]) {  /* code */
       0xB8120000,  //  0000  GETNGBL	R4	K0
       0x88100901,  //  0001  GETMBR	R4	R4	K1
       0x88140502,  //  0002  GETMBR	R5	R2	K2
       0x88180503,  //  0003  GETMBR	R6	R2	K3
       0x541E02FF,  //  0004  LDINT	R7	768
       0x1C1C0A07,  //  0005  EQ	R7	R5	R7
-      0x781E006D,  //  0006  JMPF	R7	#0075
+      0x781E005A,  //  0006  JMPF	R7	#0062
       0x8C1C0104,  //  0007  GETMET	R7	R0	K4
       0x7C1C0200,  //  0008  CALL	R7	1
       0x1C1C0D05,  //  0009  EQ	R7	R6	K5
@@ -353,7 +358,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x4C280000,  //  0017  LDNIL	R10
       0x7C1C0600,  //  0018  CALL	R7	3
       0x80040E00,  //  0019  RET	1	R7
-      0x70020058,  //  001A  JMP		#0074
+      0x70020046,  //  001A  JMP		#0062
       0x1C1C0D0A,  //  001B  EQ	R7	R6	K10
       0x781E000F,  //  001C  JMPF	R7	#002D
       0x881C010B,  //  001D  GETMBR	R7	R0	K11
@@ -371,7 +376,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x4C280000,  //  0029  LDNIL	R10
       0x7C1C0600,  //  002A  CALL	R7	3
       0x80040E00,  //  002B  RET	1	R7
-      0x70020046,  //  002C  JMP		#0074
+      0x70020034,  //  002C  JMP		#0062
       0x541E0006,  //  002D  LDINT	R7	7
       0x1C1C0C07,  //  002E  EQ	R7	R6	R7
       0x781E0005,  //  002F  JMPF	R7	#0036
@@ -380,7 +385,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x58280005,  //  0032  LDCONST	R10	K5
       0x7C1C0600,  //  0033  CALL	R7	3
       0x80040E00,  //  0034  RET	1	R7
-      0x7002003D,  //  0035  JMP		#0074
+      0x7002002B,  //  0035  JMP		#0062
       0x541E0007,  //  0036  LDINT	R7	8
       0x1C1C0C07,  //  0037  EQ	R7	R6	R7
       0x781E0005,  //  0038  JMPF	R7	#003F
@@ -389,7 +394,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x58280005,  //  003B  LDCONST	R10	K5
       0x7C1C0600,  //  003C  CALL	R7	3
       0x80040E00,  //  003D  RET	1	R7
-      0x70020034,  //  003E  JMP		#0074
+      0x70020022,  //  003E  JMP		#0062
       0x541E000E,  //  003F  LDINT	R7	15
       0x1C1C0C07,  //  0040  EQ	R7	R6	R7
       0x781E0005,  //  0041  JMPF	R7	#0048
@@ -398,7 +403,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x58280005,  //  0044  LDCONST	R10	K5
       0x7C1C0600,  //  0045  CALL	R7	3
       0x80040E00,  //  0046  RET	1	R7
-      0x7002002B,  //  0047  JMP		#0074
+      0x70020019,  //  0047  JMP		#0062
       0x541E4000,  //  0048  LDINT	R7	16385
       0x1C1C0C07,  //  0049  EQ	R7	R6	R7
       0x781E0005,  //  004A  JMPF	R7	#0051
@@ -407,7 +412,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x58280005,  //  004D  LDCONST	R10	K5
       0x7C1C0600,  //  004E  CALL	R7	3
       0x80040E00,  //  004F  RET	1	R7
-      0x70020022,  //  0050  JMP		#0074
+      0x70020010,  //  0050  JMP		#0062
       0x541E4009,  //  0051  LDINT	R7	16394
       0x1C1C0C07,  //  0052  EQ	R7	R6	R7
       0x781E0005,  //  0053  JMPF	R7	#005A
@@ -416,44 +421,24 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
       0x5828000A,  //  0056  LDCONST	R10	K10
       0x7C1C0600,  //  0057  CALL	R7	3
       0x80040E00,  //  0058  RET	1	R7
-      0x70020019,  //  0059  JMP		#0074
+      0x70020007,  //  0059  JMP		#0062
       0x541E000F,  //  005A  LDINT	R7	16
       0x1C1C0C07,  //  005B  EQ	R7	R6	R7
-      0x781E0005,  //  005C  JMPF	R7	#0063
+      0x781E0004,  //  005C  JMPF	R7	#0062
       0x8C1C0707,  //  005D  GETMET	R7	R3	K7
       0x88240908,  //  005E  GETMBR	R9	R4	K8
       0x58280005,  //  005F  LDCONST	R10	K5
       0x7C1C0600,  //  0060  CALL	R7	3
       0x80040E00,  //  0061  RET	1	R7
-      0x70020010,  //  0062  JMP		#0074
-      0x541EFFFB,  //  0063  LDINT	R7	65532
-      0x1C1C0C07,  //  0064  EQ	R7	R6	R7
-      0x781E0005,  //  0065  JMPF	R7	#006C
-      0x8C1C0707,  //  0066  GETMET	R7	R3	K7
-      0x8824090C,  //  0067  GETMBR	R9	R4	K12
-      0x5828000A,  //  0068  LDCONST	R10	K10
-      0x7C1C0600,  //  0069  CALL	R7	3
+      0x601C0003,  //  0062  GETGBL	R7	G3
+      0x5C200000,  //  0063  MOVE	R8	R0
+      0x7C1C0200,  //  0064  CALL	R7	1
+      0x8C1C0F0D,  //  0065  GETMET	R7	R7	K13
+      0x5C240200,  //  0066  MOVE	R9	R1
+      0x5C280400,  //  0067  MOVE	R10	R2
+      0x5C2C0600,  //  0068  MOVE	R11	R3
+      0x7C1C0800,  //  0069  CALL	R7	4
       0x80040E00,  //  006A  RET	1	R7
-      0x70020007,  //  006B  JMP		#0074
-      0x541EFFFC,  //  006C  LDINT	R7	65533
-      0x1C1C0C07,  //  006D  EQ	R7	R6	R7
-      0x781E0004,  //  006E  JMPF	R7	#0074
-      0x8C1C0707,  //  006F  GETMET	R7	R3	K7
-      0x8824090C,  //  0070  GETMBR	R9	R4	K12
-      0x542A0004,  //  0071  LDINT	R10	5
-      0x7C1C0600,  //  0072  CALL	R7	3
-      0x80040E00,  //  0073  RET	1	R7
-      0x70020008,  //  0074  JMP		#007E
-      0x601C0003,  //  0075  GETGBL	R7	G3
-      0x5C200000,  //  0076  MOVE	R8	R0
-      0x7C1C0200,  //  0077  CALL	R7	1
-      0x8C1C0F0D,  //  0078  GETMET	R7	R7	K13
-      0x5C240200,  //  0079  MOVE	R9	R1
-      0x5C280400,  //  007A  MOVE	R10	R2
-      0x5C2C0600,  //  007B  MOVE	R11	R3
-      0x7C1C0800,  //  007C  CALL	R7	4
-      0x80040E00,  //  007D  RET	1	R7
-      0x80000000,  //  007E  RET	0
     })
   )
 );
@@ -463,7 +448,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_read_attribute,   /* name */
 /********************************************************************
 ** Solidified function: invoke_request
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_invoke_request,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_invoke_request,   /* name */
   be_nested_proto(
     15,                          /* nstack */
     4,                          /* argc */
@@ -471,7 +457,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_invoke_request,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[19]) {     /* constants */
     /* K0   */  be_nested_str_weak(matter),
@@ -625,7 +611,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_invoke_request,   /* name */
 /********************************************************************
 ** Solidified function: set_hue
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_set_hue,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_set_hue,   /* name */
   be_nested_proto(
     9,                          /* nstack */
     2,                          /* argc */
@@ -633,7 +620,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_set_hue,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 6]) {     /* constants */
     /* K0   */  be_nested_str_weak(tasmota),
@@ -675,7 +662,8 @@ be_local_closure(Matter_Plugin_Bridge_Light3_set_hue,   /* name */
 /********************************************************************
 ** Solidified function: init
 ********************************************************************/
-be_local_closure(Matter_Plugin_Bridge_Light3_init,   /* name */
+extern const bclass be_class_Matter_Plugin_Bridge_Light3;
+be_local_closure(class_Matter_Plugin_Bridge_Light3_init,   /* name */
   be_nested_proto(
     9,                          /* nstack */
     4,                          /* argc */
@@ -683,7 +671,7 @@ be_local_closure(Matter_Plugin_Bridge_Light3_init,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Bridge_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 1]) {     /* constants */
     /* K0   */  be_nested_str_weak(init),
@@ -715,64 +703,85 @@ be_local_class(Matter_Plugin_Bridge_Light3,
     &be_class_Matter_Plugin_Bridge_Light1,
     be_nested_map(14,
     ( (struct bmapnode*) &(const bmapnode[]) {
-        { be_const_key_weak(set_sat, 6), be_const_closure(Matter_Plugin_Bridge_Light3_set_sat_closure) },
-        { be_const_key_weak(init, 8), be_const_closure(Matter_Plugin_Bridge_Light3_init_closure) },
-        { be_const_key_weak(parse_update, -1), be_const_closure(Matter_Plugin_Bridge_Light3_parse_update_closure) },
+        { be_const_key_weak(set_sat, 6), be_const_closure(class_Matter_Plugin_Bridge_Light3_set_sat_closure) },
+        { be_const_key_weak(init, 8), be_const_closure(class_Matter_Plugin_Bridge_Light3_init_closure) },
+        { be_const_key_weak(parse_update, -1), be_const_closure(class_Matter_Plugin_Bridge_Light3_parse_update_closure) },
         { be_const_key_weak(TYPE, -1), be_nested_str_weak(http_light3) },
-        { be_const_key_weak(web_values, -1), be_const_closure(Matter_Plugin_Bridge_Light3_web_values_closure) },
-        { be_const_key_weak(web_value_RGB, 1), be_const_closure(Matter_Plugin_Bridge_Light3_web_value_RGB_closure) },
+        { be_const_key_weak(web_values, -1), be_const_closure(class_Matter_Plugin_Bridge_Light3_web_values_closure) },
+        { be_const_key_weak(web_value_RGB, 1), be_const_closure(class_Matter_Plugin_Bridge_Light3_web_value_RGB_closure) },
         { be_const_key_weak(CLUSTERS, 13), be_const_simple_instance(be_nested_simple_instance(&be_class_map, {
         be_const_map( *     be_nested_map(8,
     ( (struct bmapnode*) &(const bmapnode[]) {
         { be_const_key_int(8, 7), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(7,
+        be_const_list( *     be_nested_list(11,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(2),
         be_const_int(3),
         be_const_int(15),
         be_const_int(17),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(57, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(7,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
-        be_const_int(17),
         be_const_int(3),
         be_const_int(5),
         be_const_int(10),
         be_const_int(15),
         be_const_int(17),
         be_const_int(18),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
+        be_const_int(65532),
+        be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(29, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(6,
+        be_const_list( *     be_nested_list(10,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
         be_const_int(2),
         be_const_int(3),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(3, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(4,
+        be_const_list( *     be_nested_list(8,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(4, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(3,
+        be_const_list( *     be_nested_list(7,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(5, 2), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(8,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
@@ -780,18 +789,26 @@ be_local_class(Matter_Plugin_Bridge_Light3,
         be_const_int(3),
         be_const_int(4),
         be_const_int(5),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(6, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(3,
+        be_const_list( *     be_nested_list(7,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(768, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(9,
+        be_const_list( *     be_nested_list(13,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
@@ -800,13 +817,17 @@ be_local_class(Matter_Plugin_Bridge_Light3,
         be_const_int(15),
         be_const_int(16385),
         be_const_int(16394),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
     }))    ) } )) },
-        { be_const_key_weak(invoke_request, -1), be_const_closure(Matter_Plugin_Bridge_Light3_invoke_request_closure) },
+        { be_const_key_weak(invoke_request, -1), be_const_closure(class_Matter_Plugin_Bridge_Light3_invoke_request_closure) },
         { be_const_key_weak(DISPLAY_NAME, -1), be_nested_str_weak(Light_X203_X20RGB) },
-        { be_const_key_weak(set_hue, 11), be_const_closure(Matter_Plugin_Bridge_Light3_set_hue_closure) },
+        { be_const_key_weak(set_hue, 11), be_const_closure(class_Matter_Plugin_Bridge_Light3_set_hue_closure) },
         { be_const_key_weak(shadow_hue, 9), be_const_var(0) },
         { be_const_key_weak(TYPES, 12), be_const_simple_instance(be_nested_simple_instance(&be_class_map, {
         be_const_map( *     be_nested_map(1,
@@ -814,16 +835,9 @@ be_local_class(Matter_Plugin_Bridge_Light3,
         { be_const_key_int(269, -1), be_const_int(2) },
     }))    ) } )) },
         { be_const_key_weak(shadow_sat, -1), be_const_var(1) },
-        { be_const_key_weak(read_attribute, -1), be_const_closure(Matter_Plugin_Bridge_Light3_read_attribute_closure) },
+        { be_const_key_weak(read_attribute, -1), be_const_closure(class_Matter_Plugin_Bridge_Light3_read_attribute_closure) },
     })),
     be_str_weak(Matter_Plugin_Bridge_Light3)
 );
-/*******************************************************************/
-
-void be_load_Matter_Plugin_Bridge_Light3_class(bvm *vm) {
-    be_pushntvclass(vm, &be_class_Matter_Plugin_Bridge_Light3);
-    be_setglobal(vm, "Matter_Plugin_Bridge_Light3");
-    be_pop(vm, 1);
-}
 /********************************************************************/
 /* End of solidification */

@@ -9,7 +9,8 @@ extern const bclass be_class_Matter_Plugin_ShutterTilt;
 /********************************************************************
 ** Solidified function: update_tilt_min_max
 ********************************************************************/
-be_local_closure(Matter_Plugin_ShutterTilt_update_tilt_min_max,   /* name */
+extern const bclass be_class_Matter_Plugin_ShutterTilt;
+be_local_closure(class_Matter_Plugin_ShutterTilt_update_tilt_min_max,   /* name */
   be_nested_proto(
     6,                          /* nstack */
     1,                          /* argc */
@@ -17,7 +18,7 @@ be_local_closure(Matter_Plugin_ShutterTilt_update_tilt_min_max,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_ShutterTilt, 
     1,                          /* has constants */
     ( &(const bvalue[13]) {     /* constants */
     /* K0   */  be_nested_str_weak(tasmota),
@@ -79,7 +80,8 @@ be_local_closure(Matter_Plugin_ShutterTilt_update_tilt_min_max,   /* name */
 /********************************************************************
 ** Solidified function: read_attribute
 ********************************************************************/
-be_local_closure(Matter_Plugin_ShutterTilt_read_attribute,   /* name */
+extern const bclass be_class_Matter_Plugin_ShutterTilt;
+be_local_closure(class_Matter_Plugin_ShutterTilt_read_attribute,   /* name */
   be_nested_proto(
     14,                          /* nstack */
     4,                          /* argc */
@@ -87,7 +89,7 @@ be_local_closure(Matter_Plugin_ShutterTilt_read_attribute,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_ShutterTilt, 
     1,                          /* has constants */
     ( &(const bvalue[20]) {     /* constants */
     /* K0   */  be_nested_str_weak(matter),
@@ -236,7 +238,8 @@ be_local_closure(Matter_Plugin_ShutterTilt_read_attribute,   /* name */
 /********************************************************************
 ** Solidified function: parse_sensors
 ********************************************************************/
-be_local_closure(Matter_Plugin_ShutterTilt_parse_sensors,   /* name */
+extern const bclass be_class_Matter_Plugin_ShutterTilt;
+be_local_closure(class_Matter_Plugin_ShutterTilt_parse_sensors,   /* name */
   be_nested_proto(
     9,                          /* nstack */
     2,                          /* argc */
@@ -244,7 +247,7 @@ be_local_closure(Matter_Plugin_ShutterTilt_parse_sensors,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_ShutterTilt, 
     1,                          /* has constants */
     ( &(const bvalue[ 9]) {     /* constants */
     /* K0   */  be_nested_str_weak(Shutter),
@@ -300,7 +303,8 @@ be_local_closure(Matter_Plugin_ShutterTilt_parse_sensors,   /* name */
 /********************************************************************
 ** Solidified function: invoke_request
 ********************************************************************/
-be_local_closure(Matter_Plugin_ShutterTilt_invoke_request,   /* name */
+extern const bclass be_class_Matter_Plugin_ShutterTilt;
+be_local_closure(class_Matter_Plugin_ShutterTilt_invoke_request,   /* name */
   be_nested_proto(
     18,                          /* nstack */
     4,                          /* argc */
@@ -308,7 +312,7 @@ be_local_closure(Matter_Plugin_ShutterTilt_invoke_request,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_ShutterTilt, 
     1,                          /* has constants */
     ( &(const bvalue[23]) {     /* constants */
     /* K0   */  be_nested_str_weak(light),
@@ -432,15 +436,15 @@ be_local_class(Matter_Plugin_ShutterTilt,
     &be_class_Matter_Plugin_Shutter,
     be_nested_map(10,
     ( (struct bmapnode*) &(const bmapnode[]) {
-        { be_const_key_weak(update_tilt_min_max, -1), be_const_closure(Matter_Plugin_ShutterTilt_update_tilt_min_max_closure) },
+        { be_const_key_weak(update_tilt_min_max, -1), be_const_closure(class_Matter_Plugin_ShutterTilt_update_tilt_min_max_closure) },
         { be_const_key_weak(DISPLAY_NAME, -1), be_nested_str_weak(Shutter_X20_X2B_X20Tilt) },
-        { be_const_key_weak(read_attribute, -1), be_const_closure(Matter_Plugin_ShutterTilt_read_attribute_closure) },
+        { be_const_key_weak(read_attribute, -1), be_const_closure(class_Matter_Plugin_ShutterTilt_read_attribute_closure) },
         { be_const_key_weak(TYPE, -1), be_nested_str_weak(shutter_X2Btilt) },
         { be_const_key_weak(CLUSTERS, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_map, {
         be_const_map( *     be_nested_map(6,
     ( (struct bmapnode*) &(const bmapnode[]) {
         { be_const_key_int(258, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(14,
+        be_const_list( *     be_nested_list(17,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(5),
@@ -450,15 +454,18 @@ be_local_class(Matter_Plugin_ShutterTilt,
         be_const_int(13),
         be_const_int(14),
         be_const_int(23),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
         be_const_int(7),
         be_const_int(12),
         be_const_int(15),
-        be_const_int(65532),
     }))    ) } )) },
         { be_const_key_int(5, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(8,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
@@ -466,60 +473,74 @@ be_local_class(Matter_Plugin_ShutterTilt,
         be_const_int(3),
         be_const_int(4),
         be_const_int(5),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(57, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(7,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
-        be_const_int(17),
         be_const_int(3),
         be_const_int(5),
         be_const_int(10),
         be_const_int(15),
         be_const_int(17),
         be_const_int(18),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
+        be_const_int(65532),
+        be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(3, 2), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(4,
+        be_const_list( *     be_nested_list(8,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(4, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(3,
+        be_const_list( *     be_nested_list(7,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(29, 1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(6,
+        be_const_list( *     be_nested_list(10,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
         be_const_int(2),
         be_const_int(3),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
     }))    ) } )) },
         { be_const_key_weak(tilt_min, 8), be_const_var(1) },
-        { be_const_key_weak(parse_sensors, -1), be_const_closure(Matter_Plugin_ShutterTilt_parse_sensors_closure) },
-        { be_const_key_weak(invoke_request, -1), be_const_closure(Matter_Plugin_ShutterTilt_invoke_request_closure) },
+        { be_const_key_weak(parse_sensors, -1), be_const_closure(class_Matter_Plugin_ShutterTilt_parse_sensors_closure) },
+        { be_const_key_weak(invoke_request, -1), be_const_closure(class_Matter_Plugin_ShutterTilt_invoke_request_closure) },
         { be_const_key_weak(shadow_shutter_tilt, -1), be_const_var(0) },
         { be_const_key_weak(tilt_max, 3), be_const_var(2) },
     })),
     be_str_weak(Matter_Plugin_ShutterTilt)
 );
-/*******************************************************************/
-
-void be_load_Matter_Plugin_ShutterTilt_class(bvm *vm) {
-    be_pushntvclass(vm, &be_class_Matter_Plugin_ShutterTilt);
-    be_setglobal(vm, "Matter_Plugin_ShutterTilt");
-    be_pop(vm, 1);
-}
 /********************************************************************/
 /* End of solidification */

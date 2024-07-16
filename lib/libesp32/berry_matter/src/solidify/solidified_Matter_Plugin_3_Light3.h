@@ -9,7 +9,8 @@ extern const bclass be_class_Matter_Plugin_Light3;
 /********************************************************************
 ** Solidified function: update_virtual
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_update_virtual,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_update_virtual,   /* name */
   be_nested_proto(
     8,                          /* nstack */
     2,                          /* argc */
@@ -17,7 +18,7 @@ be_local_closure(Matter_Plugin_Light3_update_virtual,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 5]) {     /* constants */
     /* K0   */  be_nested_str_weak(find),
@@ -65,7 +66,8 @@ be_local_closure(Matter_Plugin_Light3_update_virtual,   /* name */
 /********************************************************************
 ** Solidified function: set_hue_sat
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_set_hue_sat,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_set_hue_sat,   /* name */
   be_nested_proto(
     11,                          /* nstack */
     3,                          /* argc */
@@ -73,7 +75,7 @@ be_local_closure(Matter_Plugin_Light3_set_hue_sat,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[13]) {     /* constants */
     /* K0   */  be_const_int(0),
@@ -206,7 +208,8 @@ be_local_closure(Matter_Plugin_Light3_set_hue_sat,   /* name */
 /********************************************************************
 ** Solidified function: invoke_request
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_invoke_request,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_invoke_request,   /* name */
   be_nested_proto(
     16,                          /* nstack */
     4,                          /* argc */
@@ -214,7 +217,7 @@ be_local_closure(Matter_Plugin_Light3_invoke_request,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[20]) {     /* constants */
     /* K0   */  be_nested_str_weak(light),
@@ -372,7 +375,8 @@ be_local_closure(Matter_Plugin_Light3_invoke_request,   /* name */
 /********************************************************************
 ** Solidified function: init
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_init,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_init,   /* name */
   be_nested_proto(
     9,                          /* nstack */
     4,                          /* argc */
@@ -380,7 +384,7 @@ be_local_closure(Matter_Plugin_Light3_init,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[ 4]) {     /* constants */
     /* K0   */  be_nested_str_weak(init),
@@ -411,7 +415,8 @@ be_local_closure(Matter_Plugin_Light3_init,   /* name */
 /********************************************************************
 ** Solidified function: update_shadow
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_update_shadow,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_update_shadow,   /* name */
   be_nested_proto(
     12,                          /* nstack */
     1,                          /* argc */
@@ -419,7 +424,7 @@ be_local_closure(Matter_Plugin_Light3_update_shadow,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[14]) {     /* constants */
     /* K0   */  be_nested_str_weak(update_shadow),
@@ -515,7 +520,8 @@ be_local_closure(Matter_Plugin_Light3_update_shadow,   /* name */
 /********************************************************************
 ** Solidified function: read_attribute
 ********************************************************************/
-be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
+extern const bclass be_class_Matter_Plugin_Light3;
+be_local_closure(class_Matter_Plugin_Light3_read_attribute,   /* name */
   be_nested_proto(
     12,                          /* nstack */
     4,                          /* argc */
@@ -523,7 +529,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
     0,                          /* has upvals */
     NULL,                       /* no upvals */
     0,                          /* has sup protos */
-    NULL,                       /* no sub protos */
+    &be_class_Matter_Plugin_Light3, 
     1,                          /* has constants */
     ( &(const bvalue[13]) {     /* constants */
     /* K0   */  be_nested_str_weak(matter),
@@ -542,14 +548,14 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
     }),
     be_str_weak(read_attribute),
     &be_const_str_solidified,
-    ( &(const binstruction[107]) {  /* code */
+    ( &(const binstruction[96]) {  /* code */
       0xB8120000,  //  0000  GETNGBL	R4	K0
       0x88100901,  //  0001  GETMBR	R4	R4	K1
       0x88140502,  //  0002  GETMBR	R5	R2	K2
       0x88180503,  //  0003  GETMBR	R6	R2	K3
       0x541E02FF,  //  0004  LDINT	R7	768
       0x1C1C0A07,  //  0005  EQ	R7	R5	R7
-      0x781E0059,  //  0006  JMPF	R7	#0061
+      0x781E004F,  //  0006  JMPF	R7	#0057
       0x8C1C0104,  //  0007  GETMET	R7	R0	K4
       0x7C1C0200,  //  0008  CALL	R7	1
       0x1C1C0D05,  //  0009  EQ	R7	R6	K5
@@ -559,7 +565,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x88280108,  //  000D  GETMBR	R10	R0	K8
       0x7C1C0600,  //  000E  CALL	R7	3
       0x80040E00,  //  000F  RET	1	R7
-      0x7002004E,  //  0010  JMP		#0060
+      0x70020045,  //  0010  JMP		#0057
       0x1C1C0D09,  //  0011  EQ	R7	R6	K9
       0x781E0005,  //  0012  JMPF	R7	#0019
       0x8C1C0706,  //  0013  GETMET	R7	R3	K6
@@ -567,7 +573,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x8828010A,  //  0015  GETMBR	R10	R0	K10
       0x7C1C0600,  //  0016  CALL	R7	3
       0x80040E00,  //  0017  RET	1	R7
-      0x70020046,  //  0018  JMP		#0060
+      0x7002003D,  //  0018  JMP		#0057
       0x541E0006,  //  0019  LDINT	R7	7
       0x1C1C0C07,  //  001A  EQ	R7	R6	R7
       0x781E0005,  //  001B  JMPF	R7	#0022
@@ -576,7 +582,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280005,  //  001E  LDCONST	R10	K5
       0x7C1C0600,  //  001F  CALL	R7	3
       0x80040E00,  //  0020  RET	1	R7
-      0x7002003D,  //  0021  JMP		#0060
+      0x70020034,  //  0021  JMP		#0057
       0x541E0007,  //  0022  LDINT	R7	8
       0x1C1C0C07,  //  0023  EQ	R7	R6	R7
       0x781E0005,  //  0024  JMPF	R7	#002B
@@ -585,7 +591,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280005,  //  0027  LDCONST	R10	K5
       0x7C1C0600,  //  0028  CALL	R7	3
       0x80040E00,  //  0029  RET	1	R7
-      0x70020034,  //  002A  JMP		#0060
+      0x7002002B,  //  002A  JMP		#0057
       0x541E000E,  //  002B  LDINT	R7	15
       0x1C1C0C07,  //  002C  EQ	R7	R6	R7
       0x781E0005,  //  002D  JMPF	R7	#0034
@@ -594,7 +600,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280005,  //  0030  LDCONST	R10	K5
       0x7C1C0600,  //  0031  CALL	R7	3
       0x80040E00,  //  0032  RET	1	R7
-      0x7002002B,  //  0033  JMP		#0060
+      0x70020022,  //  0033  JMP		#0057
       0x541E4000,  //  0034  LDINT	R7	16385
       0x1C1C0C07,  //  0035  EQ	R7	R6	R7
       0x781E0005,  //  0036  JMPF	R7	#003D
@@ -603,7 +609,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280005,  //  0039  LDCONST	R10	K5
       0x7C1C0600,  //  003A  CALL	R7	3
       0x80040E00,  //  003B  RET	1	R7
-      0x70020022,  //  003C  JMP		#0060
+      0x70020019,  //  003C  JMP		#0057
       0x541E4009,  //  003D  LDINT	R7	16394
       0x1C1C0C07,  //  003E  EQ	R7	R6	R7
       0x781E0005,  //  003F  JMPF	R7	#0046
@@ -612,7 +618,7 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280009,  //  0042  LDCONST	R10	K9
       0x7C1C0600,  //  0043  CALL	R7	3
       0x80040E00,  //  0044  RET	1	R7
-      0x70020019,  //  0045  JMP		#0060
+      0x70020010,  //  0045  JMP		#0057
       0x541E000F,  //  0046  LDINT	R7	16
       0x1C1C0C07,  //  0047  EQ	R7	R6	R7
       0x781E0005,  //  0048  JMPF	R7	#004F
@@ -621,35 +627,24 @@ be_local_closure(Matter_Plugin_Light3_read_attribute,   /* name */
       0x58280005,  //  004B  LDCONST	R10	K5
       0x7C1C0600,  //  004C  CALL	R7	3
       0x80040E00,  //  004D  RET	1	R7
-      0x70020010,  //  004E  JMP		#0060
+      0x70020007,  //  004E  JMP		#0057
       0x541EFFFB,  //  004F  LDINT	R7	65532
       0x1C1C0C07,  //  0050  EQ	R7	R6	R7
-      0x781E0005,  //  0051  JMPF	R7	#0058
+      0x781E0004,  //  0051  JMPF	R7	#0057
       0x8C1C0706,  //  0052  GETMET	R7	R3	K6
       0x8824090B,  //  0053  GETMBR	R9	R4	K11
       0x58280009,  //  0054  LDCONST	R10	K9
       0x7C1C0600,  //  0055  CALL	R7	3
       0x80040E00,  //  0056  RET	1	R7
-      0x70020007,  //  0057  JMP		#0060
-      0x541EFFFC,  //  0058  LDINT	R7	65533
-      0x1C1C0C07,  //  0059  EQ	R7	R6	R7
-      0x781E0004,  //  005A  JMPF	R7	#0060
-      0x8C1C0706,  //  005B  GETMET	R7	R3	K6
-      0x8824090B,  //  005C  GETMBR	R9	R4	K11
-      0x542A0004,  //  005D  LDINT	R10	5
-      0x7C1C0600,  //  005E  CALL	R7	3
+      0x601C0003,  //  0057  GETGBL	R7	G3
+      0x5C200000,  //  0058  MOVE	R8	R0
+      0x7C1C0200,  //  0059  CALL	R7	1
+      0x8C1C0F0C,  //  005A  GETMET	R7	R7	K12
+      0x5C240200,  //  005B  MOVE	R9	R1
+      0x5C280400,  //  005C  MOVE	R10	R2
+      0x5C2C0600,  //  005D  MOVE	R11	R3
+      0x7C1C0800,  //  005E  CALL	R7	4
       0x80040E00,  //  005F  RET	1	R7
-      0x70020008,  //  0060  JMP		#006A
-      0x601C0003,  //  0061  GETGBL	R7	G3
-      0x5C200000,  //  0062  MOVE	R8	R0
-      0x7C1C0200,  //  0063  CALL	R7	1
-      0x8C1C0F0C,  //  0064  GETMET	R7	R7	K12
-      0x5C240200,  //  0065  MOVE	R9	R1
-      0x5C280400,  //  0066  MOVE	R10	R2
-      0x5C2C0600,  //  0067  MOVE	R11	R3
-      0x7C1C0800,  //  0068  CALL	R7	4
-      0x80040E00,  //  0069  RET	1	R7
-      0x80000000,  //  006A  RET	0
     })
   )
 );
@@ -667,66 +662,87 @@ be_local_class(Matter_Plugin_Light3,
     ( (struct bmapnode*) &(const bmapnode[]) {
         { be_const_key_weak(shadow_hue, -1), be_const_var(0) },
         { be_const_key_weak(shadow_sat, -1), be_const_var(1) },
-        { be_const_key_weak(update_virtual, 8), be_const_closure(Matter_Plugin_Light3_update_virtual_closure) },
-        { be_const_key_weak(update_shadow, -1), be_const_closure(Matter_Plugin_Light3_update_shadow_closure) },
-        { be_const_key_weak(read_attribute, -1), be_const_closure(Matter_Plugin_Light3_read_attribute_closure) },
-        { be_const_key_weak(invoke_request, -1), be_const_closure(Matter_Plugin_Light3_invoke_request_closure) },
-        { be_const_key_weak(init, 9), be_const_closure(Matter_Plugin_Light3_init_closure) },
-        { be_const_key_weak(set_hue_sat, 3), be_const_closure(Matter_Plugin_Light3_set_hue_sat_closure) },
+        { be_const_key_weak(update_virtual, 8), be_const_closure(class_Matter_Plugin_Light3_update_virtual_closure) },
+        { be_const_key_weak(update_shadow, -1), be_const_closure(class_Matter_Plugin_Light3_update_shadow_closure) },
+        { be_const_key_weak(read_attribute, -1), be_const_closure(class_Matter_Plugin_Light3_read_attribute_closure) },
+        { be_const_key_weak(invoke_request, -1), be_const_closure(class_Matter_Plugin_Light3_invoke_request_closure) },
+        { be_const_key_weak(init, 9), be_const_closure(class_Matter_Plugin_Light3_init_closure) },
+        { be_const_key_weak(set_hue_sat, 3), be_const_closure(class_Matter_Plugin_Light3_set_hue_sat_closure) },
         { be_const_key_weak(TYPE, -1), be_nested_str_weak(light3) },
         { be_const_key_weak(DISPLAY_NAME, -1), be_nested_str_weak(Light_X203_X20RGB) },
         { be_const_key_weak(CLUSTERS, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_map, {
         be_const_map( *     be_nested_map(8,
     ( (struct bmapnode*) &(const bmapnode[]) {
         { be_const_key_int(8, 7), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(7,
+        be_const_list( *     be_nested_list(11,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(2),
         be_const_int(3),
         be_const_int(15),
         be_const_int(17),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(57, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(7,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
-        be_const_int(17),
         be_const_int(3),
         be_const_int(5),
         be_const_int(10),
         be_const_int(15),
         be_const_int(17),
         be_const_int(18),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
+        be_const_int(65532),
+        be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(29, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(6,
+        be_const_list( *     be_nested_list(10,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
         be_const_int(2),
         be_const_int(3),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(3, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(4,
+        be_const_list( *     be_nested_list(8,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(4, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(3,
+        be_const_list( *     be_nested_list(7,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(5, 2), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(8,
+        be_const_list( *     be_nested_list(12,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
@@ -734,18 +750,26 @@ be_local_class(Matter_Plugin_Light3,
         be_const_int(3),
         be_const_int(4),
         be_const_int(5),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(6, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(3,
+        be_const_list( *     be_nested_list(7,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
         { be_const_key_int(768, -1), be_const_simple_instance(be_nested_simple_instance(&be_class_list, {
-        be_const_list( *     be_nested_list(9,
+        be_const_list( *     be_nested_list(13,
     ( (struct bvalue*) &(const bvalue[]) {
         be_const_int(0),
         be_const_int(1),
@@ -754,6 +778,10 @@ be_local_class(Matter_Plugin_Light3,
         be_const_int(15),
         be_const_int(16385),
         be_const_int(16394),
+        be_const_int(65528),
+        be_const_int(65529),
+        be_const_int(65530),
+        be_const_int(65531),
         be_const_int(65532),
         be_const_int(65533),
     }))    ) } )) },
@@ -774,12 +802,5 @@ be_local_class(Matter_Plugin_Light3,
     })),
     be_str_weak(Matter_Plugin_Light3)
 );
-/*******************************************************************/
-
-void be_load_Matter_Plugin_Light3_class(bvm *vm) {
-    be_pushntvclass(vm, &be_class_Matter_Plugin_Light3);
-    be_setglobal(vm, "Matter_Plugin_Light3");
-    be_pop(vm, 1);
-}
 /********************************************************************/
 /* End of solidification */

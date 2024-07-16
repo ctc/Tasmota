@@ -52,6 +52,7 @@ static const uint8_t MATTER_ADD_ENDPOINT_HINTS_JS[] =
   "function otm(arg_name,val){"
   "var s=eb(arg_name);"
   "s.placeholder=(val in hm)?hl[hm[val]]:\"\";"
+  "s.title=s.placeholder;"
   "};"
   "</script>";
 
@@ -118,12 +119,20 @@ const char* matter_get_opcode_name(uint16_t opcode) {
 BE_FUNC_CTYPE_DECLARE(matter_get_opcode_name, "s", "i")
 
 const char* matter_get_attribute_name(uint16_t cluster, uint16_t attribute) {
-  for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
-    if (cl->id == cluster) {
-      for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
-        if (at->id == attribute) {
-          return at->name;
+  if (attribute < 0xFFF0) {
+    for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
+      if (cl->id == cluster) {
+        for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
+          if (at->id == attribute) {
+            return at->name;
+          }
         }
+      }
+    }
+  } else {
+    for (const matter_attribute_t * at = matter_Attributes_Common; at->id != 0xFFFF; at++) {
+      if (at->id == attribute) {
+        return at->name;
       }
     }
   }
@@ -132,11 +141,13 @@ const char* matter_get_attribute_name(uint16_t cluster, uint16_t attribute) {
 BE_FUNC_CTYPE_DECLARE(matter_get_attribute_name, "s", "ii")
 
 bbool matter_is_attribute_writable(uint16_t cluster, uint16_t attribute) {
-  for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
-    if (cl->id == cluster) {
-      for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
-        if (at->id == attribute) {
-          return (at->flags & 0x01) ? btrue : bfalse;
+  if (attribute < 0xFFF0) {
+    for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
+      if (cl->id == cluster) {
+        for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
+          if (at->id == attribute) {
+            return (at->flags & 0x01) ? btrue : bfalse;
+          }
         }
       }
     }
@@ -146,14 +157,18 @@ bbool matter_is_attribute_writable(uint16_t cluster, uint16_t attribute) {
 BE_FUNC_CTYPE_DECLARE(matter_is_attribute_writable, "b", "ii")
 
 bbool matter_is_attribute_reportable(uint16_t cluster, uint16_t attribute) {
-  for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
-    if (cl->id == cluster) {
-      for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
-        if (at->id == attribute) {
-          return (at->flags & 0x02) ? btrue : bfalse;
+  if (attribute < 0xFFF0) {
+    for (const matter_cluster_t * cl = matterAllClusters; cl->id != 0xFFFF; cl++) {
+      if (cl->id == cluster) {
+        for (const matter_attribute_t * at = cl->attributes; at->id != 0xFFFF; at++) {
+          if (at->id == attribute) {
+            return (at->flags & 0x02) ? btrue : bfalse;
+          }
         }
       }
     }
+  } else {
+    return btrue;
   }
   return bfalse;
 }
@@ -182,7 +197,8 @@ extern int matter_publish_command(bvm *vm);
 #include "solidify/solidified_Matter_0_Inspect.h"
 
 extern const bclass be_class_Matter_TLV;   // need to declare it upfront because of circular reference
-#include "solidify/solidified_Matter_Path.h"
+#include "solidify/solidified_Matter_Path_0.h"
+#include "solidify/solidified_Matter_Path_1_Generator.h"
 #include "solidify/solidified_Matter_TLV.h"
 #include "solidify/solidified_Matter_IM_Data.h"
 #include "solidify/solidified_Matter_UDPServer.h"
@@ -237,8 +253,10 @@ extern const bclass be_class_Matter_TLV;   // need to declare it upfront because
 #include "solidify/solidified_Matter_Plugin_2_Sensor_Occupancy.h"
 #include "solidify/solidified_Matter_Plugin_2_Sensor_OnOff.h"
 #include "solidify/solidified_Matter_Plugin_2_Sensor_Contact.h"
+#include "solidify/solidified_Matter_Plugin_2_Sensor_Waterleak.h"
 #include "solidify/solidified_Matter_Plugin_9_Virt_Sensor_Contact.h"
 #include "solidify/solidified_Matter_Plugin_9_Virt_Sensor_Occupancy.h"
+#include "solidify/solidified_Matter_Plugin_9_Virt_Sensor_Waterleak.h"
 #include "solidify/solidified_Matter_Plugin_2_Bridge_HTTP.h"
 #include "solidify/solidified_Matter_Plugin_4_Bridge_OnOff.h"
 #include "solidify/solidified_Matter_Plugin_3_Bridge_Light0.h"
@@ -253,6 +271,7 @@ extern const bclass be_class_Matter_TLV;   // need to declare it upfront because
 #include "solidify/solidified_Matter_Plugin_3_Bridge_Sensor_Occupancy.h"
 #include "solidify/solidified_Matter_Plugin_3_Bridge_Sensor_Contact.h"
 #include "solidify/solidified_Matter_Plugin_4_Bridge_Sensor_Flow.h"
+#include "solidify/solidified_Matter_Plugin_3_Bridge_Sensor_Waterleak.h"
 #include "solidify/solidified_Matter_Plugin_z_All.h"
 #include "solidify/solidified_Matter_zz_Device.h"
 
@@ -285,12 +304,14 @@ module matter (scope: global, strings: weak) {
   _STYLESHEET, comptr(MATTER_STYLESHEET)
   _ADD_ENDPOINT_JS, comptr(MATTER_ADD_ENDPOINT_HINTS_JS)
   MATTER_OPTION, int(151)       // SetOption151 enables Matter
+  AGGREGATOR_ENDPOINT, int(0x0001)    // some controllers require aggregator to be endpoint 1
+  START_ENDPOINT, int(0x0002)         // endpoint where to start devices
   seconds_to_dhm, ctype_func(matter_seconds_to_dhm)
 
   Verhoeff, class(be_class_Matter_Verhoeff)
   Counter, class(be_class_Matter_Counter)
-  setmember, closure(matter_setmember_closure)
-  member, closure(matter_member_closure)
+  setmember, closure(module_matter_setmember_closure)
+  member, closure(module_matter_member_closure)
   get_ip_bytes, ctype_func(matter_get_ip_bytes)
   publish_command, func(matter_publish_command)
 
@@ -302,11 +323,11 @@ module matter (scope: global, strings: weak) {
   get_command_name, ctype_func(matter_get_command_name)
   get_opcode_name, ctype_func(matter_get_opcode_name)
   TLV, class(be_class_Matter_TLV)
-  sort, closure(matter_sort_closure)
-  jitter, closure(matter_jitter_closure)
-  inspect, closure(matter_inspect_closure)
-  consolidate_clusters, closure(matter_consolidate_clusters_closure)
-  UC_LIST, closure(matter_UC_LIST_closure)
+  sort, closure(module_matter_sort_closure)
+  jitter, closure(module_matter_jitter_closure)
+  inspect, closure(module_matter_inspect_closure)
+  consolidate_clusters, closure(module_matter_consolidate_clusters_closure)
+  UC_LIST, closure(module_matter_UC_LIST_closure)
   Profiler, class(be_class_Matter_Profiler)
 
   // Status codes
@@ -403,6 +424,7 @@ module matter (scope: global, strings: weak) {
 
   // Interation Model
   Path, class(be_class_Matter_Path)
+  PathGenerator, class(be_class_Matter_PathGenerator)
   IM_Status, class(be_class_Matter_IM_Status)
   IM_InvokeResponse, class(be_class_Matter_IM_InvokeResponse)
   IM_WriteResponse, class(be_class_Matter_IM_WriteResponse)
